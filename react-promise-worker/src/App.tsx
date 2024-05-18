@@ -18,18 +18,20 @@ function App() {
   // comlink(web worker)による非同期処理。アニメーションが止まらない
   const handleClickWorker = async () => {
     if (workerRef.current) {
+      const start_time = performance.now()
       console.log('start workerBlockingFunc()');
       const result = await workerRef.current.workerBlockingFunc(roopCount);
-      console.log(`end workerBlockingFunc(): ${result}`);
+      console.log(`end workerBlockingFunc(): ${result} time:${(performance.now() - start_time)/1000}秒`);
     }
   };
 
   // 同期処理(画面のアニメーションが止まる)
   const handleClickSync = async () => {
     if (workerRef.current) {
+      const start_time = performance.now()
       console.log('start blockingFunc()');
       const result = blockingFunc(roopCount);
-      console.log(`end blockingFunc(): ${result}`);
+      console.log(`end blockingFunc(): ${result} time:${(performance.now() - start_time)/1000}秒`);
     }
   };
 
