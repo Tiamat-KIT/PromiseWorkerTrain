@@ -15,5 +15,5 @@ export const blockingFunc = (iterations: number): number => {
     console.log(`\tresult:${result}`);
     // randomの合計を返す
     return result;
-  };
+};
   
