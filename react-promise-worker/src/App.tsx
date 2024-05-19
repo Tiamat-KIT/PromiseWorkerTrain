@@ -1,8 +1,13 @@
 /* import useAsyncWorker from "./hooks/useAsyncWorker.ts"
 import { blockingFunc } from './blockingFunc'; */
 
+import { useEffect } from 'react';
 import './App.css';
+import animate from './animate/triangle';
 function App() {
+  useEffect(() => {
+    animate()
+  })
   /* const CountArray = [100,200,300]
   const worker = useAsyncWorker()
 
