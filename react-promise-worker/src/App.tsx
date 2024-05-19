@@ -3,12 +3,17 @@ import { blockingFunc } from './blockingFunc'; */
 
 import { useEffect } from 'react';
 import './App.css';
-import animate from './animate/triangle';
+import createBackgroundTranparentScene from './animate/createBackgroundTranparentScene';
+import RenderLoop from './animate/RenderLoop';
+import { blockingFunc } from './blockingFunc';
+import useAsyncWorker from './hooks/useAsyncWorker';
+
 function App() {
   useEffect(() => {
-    animate()
+    const {engine,scene} = createBackgroundTranparentScene()
+    RenderLoop(engine,scene)
   })
-  /* const CountArray = [100,200,300]
+  const CountArray = [100,200,300]
   const worker = useAsyncWorker()
 
   // comlink(web worker)による非同期処理。アニメーションが止まらない
@@ -34,19 +39,19 @@ function App() {
         console.log(`end blockingFunc(): ${result} time:${(performance.now() - start_time)/1000}秒`);
       })
     }
-  }; */
+  };
 
   return (
     <div>
-      {/* <button onClick={() => handleClickWorker()}>
+      <button onClick={() => handleClickWorker()}>
         時間がかかる関数をcomlinkで非同期的に実行
       </button>
       <br />
       <button onClick={() => handleClickSync()}>
         時間がかかる関数を同期的に実行
       </button>
-      <div className="return">実行結果はDevToolsのConsoleに出力されます。</div> */}
-      
+      <div className="return">実行結果はDevToolsのConsoleに出力されます。</div>
+      <canvas id="webgl"></canvas>
     </div>
   );
 }

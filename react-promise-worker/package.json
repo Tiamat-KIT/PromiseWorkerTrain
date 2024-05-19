@@ -10,16 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@babylonjs/core": "^7.7.0",
+    "@types/babylonjs": "^2.4.1",
     "@types/node": "^20.12.12",
     "comlink": "^4.4.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "three": "^0.164.1"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
-    "@types/three": "^0.164.0",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
